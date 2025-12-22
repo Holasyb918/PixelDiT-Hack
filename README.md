@@ -105,18 +105,3 @@ numpy
 如有任何问题或建议，欢迎随时联系我！
 
 ---
-
-## License
-
-MIT
-
-## Citation
-
-```bibtex
-@article{pixeldit2024,
-  title={Pixel-level Reasoning Diffusion Model for Multi-Condition Image Generation},
-  author={...},
-  journal={arXiv preprint arXiv:2511.20645},
-  year={2024}
-}
-```
