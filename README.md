@@ -10,7 +10,7 @@
 
 Unofficial implementation of **PixelDiT** based on the paper:
 
-📄 **[Pixel-level Reasoning Diffusion Model for Multi-Condition Image Generation](https://arxiv.org/abs/2511.20645)**
+📄 **[PixelDiT: Pixel Diffusion Transformers for Image Generation](https://arxiv.org/abs/2511.20645)**
 
 ### Key Features
 
@@ -61,7 +61,7 @@ If you have any questions or suggestions, feel free to reach out!
 
 基于论文的 **PixelDiT** 非官方实现：
 
-📄 **[Pixel-level Reasoning Diffusion Model for Multi-Condition Image Generation](https://arxiv.org/abs/2511.20645)**
+📄 **[PixelDiT: Pixel Diffusion Transformers for Image Generation](https://arxiv.org/abs/2511.20645)**
 
 ### 核心特性
 
