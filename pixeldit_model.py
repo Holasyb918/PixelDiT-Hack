@@ -10,7 +10,7 @@ Key innovations:
 3. Pixel Token Compaction: compress pixel tokens for efficient attention
 4. MM-DiT blocks for text-to-image generation
 
-by CodeBanana, based on LightningDiT codebase
+Based on LightningDiT codebase
 """
 
 import math
