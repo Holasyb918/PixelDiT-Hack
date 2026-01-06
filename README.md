@@ -1,4 +1,4 @@
-# PixelDiT: Pixel Diffusion Transformer
+# PixelDiT: Pixel Diffusion Transformers for Image Generation
 
 [English](#english) | [中文](#中文)
 
