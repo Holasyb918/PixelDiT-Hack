@@ -534,7 +534,7 @@ class PixelTransformerBlock(nn.Module):
             drop=0
         )
     
-    def forward(self, x: torch.Tensor, s_cond: torch.Tensor) -> torch.Tensor:
+    def forward(self, x: torch.Tensor, s_cond: torch.Tensor, rope=None) -> torch.Tensor:
         """
         Forward pass of Pixel Transformer Block.
         
@@ -583,7 +583,7 @@ class PixelTransformerBlock(nn.Module):
         x_compact = x_compact.reshape(B, L, D_sem)
         
         # Apply self-attention across all L patches in semantic space (global context)
-        x_attn = self.attn(x_compact)
+        x_attn = self.attn(x_compact, rope)
         
         # Reshape back: (B, L, D_semantic) -> (B*L, 1, D_semantic)
         x_attn = x_attn.reshape(B * L, 1, D_sem)
@@ -908,9 +908,9 @@ class PixelDiT(nn.Module):
         # Each block expects (B, L, p², D_pix) and outputs same shape
         for block in self.pixel_blocks:
             if self.use_checkpoint:
-                p_tokens = checkpoint(block, p_tokens, s_cond, use_reentrant=True)
+                p_tokens = checkpoint(block, p_tokens, s_cond, self.patch_rope, use_reentrant=True)
             else:
-                p_tokens = block(p_tokens, s_cond)
+                p_tokens = block(p_tokens, s_cond, self.patch_rope)
         
         # === Final projection ===
         # Reshape for final layer: (B, L, p², D_pix) -> (B, L*p², D_pix)
